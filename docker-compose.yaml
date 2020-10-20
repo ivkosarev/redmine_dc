@@ -19,18 +19,18 @@ services:
  
 
 
-redmine:
-    build: redmine
-    restart: always
-    depends_on:
+    redmine:
+     build: redmine
+     restart: always
+     depends_on:
         - db
-    ports:
+     ports:
         - 80:3000
-    volumes:
+     volumes:
         - ./storage/docker_redmine-plugins:/usr/src/redmine/plugins
         - ./storage/docker_redmine-themes:/usr/src/redmine/public/themes
         - ./storage/docker_redmine-data:/usr/src/redmine/files
-    environment:
+     environment:
         REDMINE_DB_POSTGRES: "postgres"
         REDMINE_DB_USERNAME: "postgres"
         REDMINE_DB_PASSWORD: "strong_pass"
@@ -38,6 +38,6 @@ redmine:
         REDMINE_SECRET_KEY_BASE: "…"
 
 
-frontend:
+    frontend:
          image: nginx
          restart: always
