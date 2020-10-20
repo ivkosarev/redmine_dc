@@ -7,14 +7,14 @@ volumes:
 services:
     db:
         image: postgres:10
-         restart: always
-         ports:
+        restart: always
+        ports:
          - 5432:5432
-         environment: 
+        environment: 
           POSTGRES_PASSWORD: example
           POSTGRES_DB: "redmine"
           PGDATA: "/var/lib/postgresql/data"
-          volumes:
+        volumes:
            - ./storage/postgresql-data:/var/lib/postgresql/data
  
 
