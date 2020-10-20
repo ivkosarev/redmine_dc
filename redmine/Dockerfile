@@ -9,7 +9,7 @@ RUN apt-get install -y subversion libcurl4-openssl-dev curl
 RUN cd /opt && svn co https://svn.redmine.org/redmine/branches/4.1-stable redmine-4.1
 RUN ln -s redmine-* redmine
 RUN curl -sSL https://get.rvm.io | bash -s stable --ruby
-RUN source /usr/local/rvm/scripts/rvm
+RUN bash source /usr/local/rvm/scripts/rvm
 RUN rvm install 2.6.5
 RUN rvm use 2.6.5
 RUN gem install bundler 
