@@ -8,11 +8,7 @@ services:
        POSTGRES_PASSWORD: "strong_pass"
        POSTGRES_DB: "redmine"
        PGDATA: "/var/lib/postgresql/data"
-     restart: always
-          "POSTGRES_HOST_AUTH_METHOD=trust"
-          POSTGRES_PASSWORD: "strong_pass"
-          POSTGRES_DB: "redmine" 
-          PGDATA: "/var/lib/postgresql/data"
+   
  
  redmine:
      networks:
