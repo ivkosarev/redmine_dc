@@ -20,7 +20,7 @@ services:
  
 
 
-    redmine:
+   redmine:
      build: ./redmine
      restart: always
      depends_on:
@@ -39,6 +39,6 @@ services:
         REDMINE_SECRET_KEY_BASE: "…"
 
 
-    frontend:
+   frontend:
          image: nginx
          restart: always
