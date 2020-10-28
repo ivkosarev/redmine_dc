@@ -5,17 +5,18 @@ volumes:
   driver: local
 
 services:
-    db:
-        image: postgres:10
-        restart: always
-        ports:
-         - 5432:5432
-        environment: 
-          POSTGRES_PASSWORD: super_strong_passwd_123
-          POSTGRES_DB: "redmine"
-          PGDATA: "/var/lib/postgresql/data"
-        volumes:
-           - ./storage/postgresql-data:/var/lib/postgresql/data
+   db:
+      restart: always
+      image: postgres:9.6-alpine
+      shm_size: 256mb
+      networks:
+        - internal_network
+      healthcheck:
+        test: ["CMD", "pg_isready", "-U", "postgres"]
+      volumes:
+        - ./postgres:/var/lib/postgresql/data
+      environment:
+        - POSTGRES_HOST_AUTH_METHOD=trust
  
 
 
