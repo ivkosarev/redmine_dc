@@ -19,7 +19,7 @@ services:
         - ./postgres:/var/lib/postgresql/data
       environment:
         - "POSTGRES_HOST_AUTH_METHOD=trust"
-        - POSTGRES_PASSWORD: super_strong_passwd_123
+        - POSTGRES_PASSWORD: superstrongpasswd123
         - POSTGRES_DB: redmine
  
 
@@ -40,7 +40,7 @@ services:
      environment:
         REDMINE_DB_POSTGRES: "postgres"
         REDMINE_DB_USERNAME: "postgres"
-        REDMINE_DB_PASSWORD: "super_strong_passwd_123"
+        REDMINE_DB_PASSWORD: "superstrongpasswd123"
         REDMINE_DB_DATABASE: "redmine"
         REDMINE_SECRET_KEY_BASE: "…"
 
