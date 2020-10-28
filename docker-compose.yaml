@@ -1,6 +1,6 @@
 version: '3.3'
 services:
-   postgres:
+ postgres:
      image: postgres:10
      volumes:
        - ./storage/postgresql-data:/var/lib/postgresql/data
@@ -8,7 +8,8 @@ services:
        POSTGRES_PASSWORD: "strong_pass"
        POSTGRES_DB: "redmine"
        PGDATA: "/var/lib/postgresql/data"
-   
+     networks:
+      - network1
  
  redmine:
      networks:
