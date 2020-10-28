@@ -6,6 +6,9 @@ volumes:
 
 services:
    db:
+      container_name: db
+      networks:
+         - network1
       restart: always
       image: postgres:9.6-alpine
       healthcheck:
@@ -18,6 +21,8 @@ services:
 
 
    redmine:
+     networks:
+      - network1
      build: ./redmine
      restart: always
      depends_on:
@@ -35,7 +40,13 @@ services:
         REDMINE_DB_DATABASE: "redmine"
         REDMINE_SECRET_KEY_BASE: "…"
 
-
    frontend:
          image: nginx
          restart: always
+         networks:
+            - network1
+
+
+networks:
+   network1:
+      driver: bridge
