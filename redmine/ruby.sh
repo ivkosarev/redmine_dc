@@ -1,8 +1,10 @@
 #!/bin/bash
+apt-get update
 apt-add-repository -y ppa:rael-gc/rvm
 apt-get update
 apt-get install rvm
- /usr/local/rvm/scripts/rvm
+echo 'source "/etc/profile.d/rvm.sh"' >> ~/.bashrc
+rvm install ruby
 rvm use 2.6.5
 gem install bundler 
 bundle config set without 'development test rmagick'
