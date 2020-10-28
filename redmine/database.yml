@@ -1,6 +1,6 @@
 production:
  adapter: postgresql
  database: redmine
- host: postgres:10
+ host: db
  username: postgres
  password: 
