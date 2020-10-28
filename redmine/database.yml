@@ -3,4 +3,4 @@ production:
  database: redmine
  host: postgres:10
  username: postgres
- password: super_strong_passwd_123
+ password: 
