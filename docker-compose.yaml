@@ -6,21 +6,22 @@ volumes:
 
 services:
  db:
+   image: postgres:9.6-alpine
    container_name: db
    expose:
       - "5432"
    networks:
       - network1
    restart: always
-   image: postgres:9.6-alpine
    healthcheck:
       test: ["CMD", "pg_isready", "-U", "postgres"]
    volumes:
        - ./postgres:/var/lib/postgresql/data
    environment:
           "POSTGRES_HOST_AUTH_METHOD=trust"
-          POSTGRES_PASSWORD: pw1234
-          POSTGRES_DB: redmine
+          POSTGRES_PASSWORD: "superstrongpasswd123"
+          POSTGRES_DB: "redmine"
+          PGDATA: "/var/lib/postgresql/data"
  
 
 
