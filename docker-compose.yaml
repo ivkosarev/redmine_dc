@@ -20,12 +20,10 @@ services:
    environment:
           "POSTGRES_HOST_AUTH_METHOD=trust"
           POSTGRES_PASSWORD: "superstrongpasswd123"
-          POSTGRES_DB: "redmine"
+          POSTGRES_DB: "redmine" 
           PGDATA: "/var/lib/postgresql/data"
  
-
-
-redmine:
+ redmine:
      networks:
       - network1
      build: ./redmine
@@ -45,7 +43,7 @@ redmine:
         REDMINE_DB_DATABASE: "redmine"
         REDMINE_SECRET_KEY_BASE: "…"
 
-frontend:
+ frontend:
          image: nginx
          restart: always
          networks:
