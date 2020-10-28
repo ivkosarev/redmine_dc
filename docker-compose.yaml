@@ -18,7 +18,9 @@ services:
       volumes:
         - ./postgres:/var/lib/postgresql/data
       environment:
-        - POSTGRES_HOST_AUTH_METHOD=trust
+        - "POSTGRES_HOST_AUTH_METHOD=trust"
+        - POSTGRES_PASSWORD: super_strong_passwd_123
+        - POSTGRES_DB: redmine
  
 
 
