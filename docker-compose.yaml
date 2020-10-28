@@ -20,7 +20,7 @@ services:
 
 
     redmine:
-     build: ./redmine .
+     build: ./redmine
      restart: always
      depends_on:
         - db
