@@ -1,6 +1,6 @@
 #!/bin/bash
 source /usr/local/rvm/scripts/rvm
-rvm use system
+rvm use 2.6.5
 gem install bundler 
 bundle config set without 'development test rmagick'
 bundle exec rake generate_secret_token
