@@ -7,7 +7,7 @@ volumes:
 services:
  db:
    container_name: db      
-    expose:
+   expose:
       - "5432"
    networks:
       - network1
