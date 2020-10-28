@@ -4,7 +4,7 @@ RUN apt-get update
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get install -y subversion libcurl4-openssl-dev curl rubygems gnupg software-properties-common
+RUN apt-get install -y subversion libcurl4-openssl-dev curl rubygems gnupg software-properties-common libpq-dev
 
 
 RUN cd /opt && svn co https://svn.redmine.org/redmine/branches/4.1-stable redmine-4.1
