@@ -8,9 +8,6 @@ services:
    db:
       restart: always
       image: postgres:9.6-alpine
-      shm_size: 256mb
-      networks:
-        - internal_network
       healthcheck:
         test: ["CMD", "pg_isready", "-U", "postgres"]
       volumes:
