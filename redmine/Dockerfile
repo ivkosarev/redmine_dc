@@ -4,8 +4,8 @@ RUN apt-get update
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get install -y tzdata gnupg python-dev subversion\
-imagemagick build-essential patch  lib1g-dev liblzma-dev\
+RUN apt-get install -y tzdata gnupg python-dev subversion \
+imagemagick build-essential patch  lib1g-dev liblzma-dev \
 libmagick++-dev passenger libcurl4-openssl-dev libssl-dev libpq-dev
 
 RUN cd /opt && svn co https://svn.redmine.org/redmine/branches/4.1-stable redmine-4.1
