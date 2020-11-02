@@ -2,7 +2,7 @@ version: '3.3'
 services:
  postgres:
      image: postgres:10
-     container_name: db
+     container_name: postgres
      volumes:
        - ./storage/postgresql-data:/var/lib/postgresql/data
      environment:
