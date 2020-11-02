@@ -1,4 +1,6 @@
 #!/bin/bash
+gem install bundler
+cd /opt/redmine-4.1 && bundle install
 bundle config set without 'development test rmagick'
 bundle exec rake generate_secret_token
 RAILS_ENV=production bundle exec rake db:migrate
