@@ -30,12 +30,6 @@ services:
         - ./storage/docker_redmine-plugins:/usr/src/redmine/plugins
         - ./storage/docker_redmine-themes:/usr/src/redmine/public/themes
         - ./storage/docker_redmine-data:/usr/src/redmine/files
-     environment:
-        REDMINE_DB_POSTGRES: "postgres"
-        REDMINE_DB_USERNAME: "postgres"
-        REDMINE_DB_PASSWORD: "superstrongpasswd123"
-        REDMINE_DB_DATABASE: "redmine"
-        REDMINE_SECRET_KEY_BASE: "…"
 
  #nginx:
     
