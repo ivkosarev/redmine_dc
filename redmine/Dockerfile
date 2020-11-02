@@ -1,24 +1,18 @@
-FROM ruby:2.6-alpine
+FROM ubuntu
 
-RUN apk update --no-cache \
-  && apk add --no-cache --virtual build-dependencies libffi-dev build-base \
-  && apk add --no-cache mysql-client tzdata mariadb-dev=10.4.13-r0 linux-headers=5.4.5-r1 imagemagick-dev=7.0.10.12-r0 \
-  && apk add --no-cache git \
-  && mkdir -p /usr/src/app/redmine \
-  && mkdir -p /usr/src/app/redmine/tmp/pids
+RUN apt-get update
 
-WORKDIR /usr/src/app/redmine
-COPY ./src /usr/src/app/redmine
-COPY docker-entrypoint.sh /usr/src/app/redmine
-COPY Gemfile /usr/src/app/redmine
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN gem install bundler -v 2.1.4 --no-document \
-  && bundle install --jobs=10 --without development test \
-  && bundle exec rake generate_secret_token \
-  && chmod 0700 docker-entrypoint.sh \
-  && apk del --purge build-dependencies \
-  && rm -rf /var/cache/apk/*
+RUN apt-get install -y tzdata gnupg python-dev subversion\
+imagemagick build-essential patch  lib1g-dev liblzma-dev\
+libmagick++-dev passenger libcurl4-openssl-dev libssl-dev libpq-dev
 
-ENTRYPOINT "/usr/src/app/redmine/docker-entrypoint.sh"
+RUN cd /opt && svn co https://svn.redmine.org/redmine/branches/4.1-stable redmine-4.1
+RUN ln -s redmine-* redmine
+COPY ./redmine/database.yml /opt/redmine-4.1/config/
+
+COPY ./redmine/ruby.sh /usr/local/bin/
+RUN chmod a+x /usr/local/bin/ruby.sh && bash /usr/local/bin/ruby.sh
 
 EXPOSE 3000
