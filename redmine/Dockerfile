@@ -4,7 +4,7 @@ RUN apt-get update
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get install -y tzdata gnupg python-dev subversion \
+RUN apt-get install -y tzdata gnupg python-dev subversion curl \
 imagemagick build-essential patch liblzma-dev \
 libmagick++-dev passenger libcurl4-openssl-dev libssl-dev libpq-dev
 
