@@ -16,6 +16,7 @@ COPY ./ruby.sh /usr/local/bin/
 RUN chmod a+x /usr/local/bin/ruby.sh && bash /usr/local/bin/ruby.sh
 
 COPY ./init.sh /usr/local/bin/
-CMD chmod a+x /usr/local/bin/init.sh && bash /usr/local/bin/init.sh
+RUN chmod a+x /usr/local/bin/init.sh 
+ENTRYPOINT exec bash /usr/local/bin/init.sh
 
 EXPOSE 3000
