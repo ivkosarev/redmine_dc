@@ -1,4 +1,5 @@
 #!/bin/bash
+source /usr/local/rvm/scripts/rvm
 rvm use 2.6.5
 gem install bundler
 cd /opt/redmine-4.1 && bundle install
