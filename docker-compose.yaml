@@ -7,9 +7,9 @@ services:
      volumes:
        - ./storage/postgresql-data:/var/lib/postgresql/data
      environment:
-       POSTGRES_USER: "postgres"
-       POSTGRES_PASSWORD: "123"
-       POSTGRES_DB: "postgres"
+       POSTGRES_USER=postgres
+       POSTGRES_PASSWORD=123
+       POSTGRES_DB=postgres
        PGDATA: "/var/lib/postgresql/data"
        POSTGRES_HOST_AUTH_METHOD: trust
      
@@ -32,7 +32,7 @@ services:
         - ./storage/docker_redmine-plugins:/usr/src/redmine/plugins
         - ./storage/docker_redmine-themes:/usr/src/redmine/public/themes
         - ./storage/docker_redmine-data:/usr/src/redmine/files
-
+     
  #nginx:
     
    #  image: nginx
