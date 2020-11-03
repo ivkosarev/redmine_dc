@@ -3,4 +3,4 @@ production:
  database: postgres
  host: postgres
  username: postgres
- password: 123
+ password: 
