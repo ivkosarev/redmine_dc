@@ -8,7 +8,7 @@ RUN pg_ctlcluster 12 main start && sudo -u postgres psql -c "ALTER USER postgres
 COPY ./start_db.sh /usr/local/bin/
 RUN chmod a+x /usr/local/bin/start_db.sh 
 ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
-CMD ["-c", "pg_ctlcluster 12"]
+CMD ["-c", "pg_ctl start -l logfile"]
 
 
 
