@@ -8,8 +8,8 @@ services:
        - ./storage/postgresql-data:/var/lib/postgresql/data
      environment:
      
-       POSTGRES_HOST_AUTH_METHOD:trust
-       PGDATA: /var/lib/postgresql/data 
+        POSTGRES_HOST_AUTH_METHOD:trust
+        PGDATA: /var/lib/postgresql/data 
       
    
      
