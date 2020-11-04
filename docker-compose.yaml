@@ -7,8 +7,9 @@ services:
      volumes:
        - ./storage/postgresql-data:/var/lib/postgresql/data
      environment:
-       POSTGRES_PASSWORD: "strong_pass"
-       POSTGRES_DB: "redmine"
+       POSTGRES_PASSWORD: "postgres"
+       POSTGRES_DB: "postgres"
+       POSTGRES_USER: postgres
        PGDATA: "/var/lib/postgresql/data"  
      
      networks:
