@@ -6,8 +6,6 @@ services:
      container_name: postgres
      volumes:
        - ./storage/postgresql-data:/var/lib/postgresql/data
-     environment:
-       POSTGRES_HOST_AUTH_METHOD: trust
      
      networks:
       - network1
@@ -15,7 +13,7 @@ services:
  redmine:
      networks:
       - network1
-     build: ./redmine
+     image: postgres
      container_name: redmine
      restart: always
      depends_on:
