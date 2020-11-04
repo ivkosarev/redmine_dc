@@ -4,9 +4,6 @@ services:
      build: ./db
      restart: always
      container_name: postgres
-     volumes:
-       - ./storage/postgresql-data:/var/lib/postgresql/data
-       - pgdata:/var/lib/postgresql/data
      environment:
        POSTGRES_USER: "redmine"
        POSTGRES_PASSWORD: "redmine"
@@ -33,9 +30,6 @@ services:
         - ./storage/docker_redmine-plugins:/usr/src/redmine/plugins
         - ./storage/docker_redmine-themes:/usr/src/redmine/public/themes
         - ./storage/docker_redmine-data:/usr/src/redmine/files
-volumes:
-  pgdata:
-    driver: local
  #nginx:
     
    #  image: nginx
