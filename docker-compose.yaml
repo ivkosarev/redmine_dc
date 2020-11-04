@@ -21,7 +21,7 @@ services:
  redmine:
      networks:
       - network1
-     image: postgres
+     build: ./redmine
      container_name: redmine
      restart: always
      depends_on:
