@@ -6,15 +6,14 @@ services:
      container_name: postgres
      volumes:
        - ./storage/postgresql-data:/var/lib/postgresql/data
-       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+       - pgdata:/var/lib/postgresql/data
      environment:
        POSTGRES_USER: "redmine"
        POSTGRES_PASSWORD: "redmine"
        POSTGRES_DB: "redmine"
-       POSTGRES_DB: "redmine"
        PGDATA: "/var/lib/postgresql/data"
        POSTGRES_HOST_AUTH_METHOD: "trust"
-       PGDATA: "/var/lib/postgresql/data"
+       
      
      networks:
       - network1
@@ -34,7 +33,9 @@ services:
         - ./storage/docker_redmine-plugins:/usr/src/redmine/plugins
         - ./storage/docker_redmine-themes:/usr/src/redmine/public/themes
         - ./storage/docker_redmine-data:/usr/src/redmine/files
-     
+volumes:
+  pgdata:
+    driver: local
  #nginx:
     
    #  image: nginx
