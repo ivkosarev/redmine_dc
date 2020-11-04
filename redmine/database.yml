@@ -1,6 +1,7 @@
 production:
  adapter: postgresql
- database: postgres
- host: postgres
+ encoding: unicode
+ database: redmine
+ pool: 5
  username: redmine
  password: redmine
