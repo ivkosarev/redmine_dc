@@ -5,13 +5,13 @@ services:
      restart: always
      container_name: postgres
      volumes:
-       - ./storage/postgresql-data:/var/lib/postgresql/data
+       - ./storage/postgresql-data:/var/lib/postgres/data
      environment:
        POSTGRES_USER: redmine
-       POSTGRES_PASSWORD=redmine
+       POSTGRES_PASSWORD: redmine
        POSTGRES_DB: redmine
        POSTGRES_HOST_AUTH_METHOD: trust
-       PGDATA: "/var/lib/postgresql/data"
+       PGDATA: "/var/lib/postgres/data"
       
    
      
