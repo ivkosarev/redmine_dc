@@ -18,7 +18,9 @@ services:
      
      networks:
       - network1
- 
+ volumes:
+  pgdata:
+    driver: local
  redmine:
      networks:
       - network1
