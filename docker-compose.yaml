@@ -1,7 +1,7 @@
 version: '3.3'
 services:
  postgres:
-     image: postgres:9.6-alpine
+     build: ./db
      restart: always
      container_name: postgres
      volumes:
