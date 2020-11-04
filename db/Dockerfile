@@ -1,4 +1,4 @@
-FROM postgres:9.4
+FROM postgres:10
 RUN mkdir -p "$PGDATA" && chmod 700 "$PGDATA"
 EXPOSE 5432
 
