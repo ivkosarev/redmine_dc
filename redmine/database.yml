@@ -2,5 +2,5 @@ production:
  adapter: postgresql
  database: postgres
  host: postgres
- username: postgres
- password: postgres
+ username: redmine
+ password: redmine
