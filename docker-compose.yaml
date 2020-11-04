@@ -10,8 +10,7 @@ services:
        POSTGRES_USER: redmine
        POSTGRES_PASSWORD: redmine
        POSTGRES_DB: redmine
-       POSTGRES_HOST_AUTH_METHOD: trust
-       PGDATA: "/var/lib/postgresql/data"
+
       
    
      
