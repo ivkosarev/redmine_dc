@@ -31,6 +31,10 @@ services:
         - ./storage/docker_redmine-plugins:/usr/src/redmine/plugins
         - ./storage/docker_redmine-themes:/usr/src/redmine/public/themes
         - ./storage/docker_redmine-data:/usr/src/redmine/files
+     environment:
+        - DB_PORT=tcp://db:5432
+ 
+ 
  #nginx:
     
    #  image: nginx

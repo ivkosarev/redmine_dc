@@ -3,7 +3,6 @@ source /usr/local/rvm/scripts/rvm
 rvm use 2.6.5
 gem install bundler
 cd /opt/redmine-4.1 && bundle install
-gem uninstall pg
 bundle config set without 'development test rmagick'
 bundle exec rake generate_secret_token
 RAILS_ENV=production bundle exec rake db:migrate --trace
