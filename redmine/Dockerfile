@@ -20,6 +20,7 @@ RUN chmod a+x /usr/local/bin/ruby.sh && bash /usr/local/bin/ruby.sh
 
 COPY ./install_r.sh /usr/local/bin/
 RUN chmod a+x /usr/local/bin/install_r.sh 
+WORKDIR /opt/redmine-4.1
 ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
 CMD ["-c", "rake rails:update:bin && ruby bin/rails server -b 0.0.0.0 -e production"]
 
