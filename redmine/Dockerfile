@@ -26,9 +26,9 @@ RUN RAILS_ENV=production bundle exec rake db:migrate --trace
 RUN RAILS_ENV=production REDMINE_LANG=ru bundle exec rake redmine:load_default_data
 
 
-COPY ./init.sh /usr/local/bin/
-RUN chmod a+x /usr/local/bin/init.sh 
+COPY ./install_r.sh /usr/local/bin/
+RUN chmod a+x /usr/local/bin/install_r.sh 
 ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
-CMD ["-c", "/usr/local/bin/init.sh"]
+CMD ["-c", "ruby bin/rails server -b 0.0.0.0 -e production"]
 
 EXPOSE 3000
