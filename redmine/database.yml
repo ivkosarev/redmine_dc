@@ -1,8 +1,8 @@
 production:
  adapter: postgresql
  encoding: unicode
- database: redmine
+ database: postgres
  host: postgres
  port: 5432
- username: redmine
- password: redmine
+ username: postgres
+ password: postgres
