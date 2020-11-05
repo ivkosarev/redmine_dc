@@ -5,10 +5,10 @@ services:
      restart: always
      container_name: postgres
      environment:
-       POSTGRES_USER: "redmine"
-       POSTGRES_PASSWORD: "redmine"
-       POSTGRES_DB: "redmine"
-       PGDATA: "/var/lib/postgresql/data"
+       #POSTGRES_USER: "redmine"
+       #POSTGRES_PASSWORD: "redmine"
+       #POSTGRES_DB: "redmine"
+       #PGDATA: "/var/lib/postgresql/data"
        POSTGRES_HOST_AUTH_METHOD: "trust"
        
      
