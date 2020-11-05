@@ -21,6 +21,6 @@ RUN chmod a+x /usr/local/bin/ruby.sh && bash /usr/local/bin/ruby.sh
 COPY ./install_r.sh /usr/local/bin/
 RUN chmod a+x /usr/local/bin/install_r.sh 
 ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
-CMD ["-c", "rake rails:update:bin && ruby bin/rails server -b 0.0.0.0 -e production"]
+CMD ["-c", "bundle exec rails server webrick -e production && ruby bin/rails server -b 0.0.0.0 -e production"]
 
 EXPOSE 3000
