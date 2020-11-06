@@ -14,8 +14,8 @@ services:
      volumes:
       - ./data/postgres:/var/lib/postgresql/data  
      
-     networks:
-      - network1
+     #networks:
+     # - network1
  redmine:
      networks:
       - network1
@@ -55,11 +55,11 @@ services:
       - redmine
      command: ["nginx", "-g", "daemon off;"]
      restart: unless-stopped
-     networks:
-      - network1
+     #networks:
+     # - network1
 
 
 
-networks:
-   network1:
-      driver: bridge
+#networks:
+#   network1:
+#     driver: bridge
