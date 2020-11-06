@@ -1,15 +1,16 @@
 version: '3.3'
 services:
  postgres:
-     build: ./db
+     image: postgres:10
      restart: always
      container_name: postgres
+     hostname: postgres
      environment:
        POSTGRES_USER: "postgres"
        POSTGRES_PASSWORD: "postgres"
        POSTGRES_DB: "postgres"
        PGDATA: "/var/lib/postgresql/data"
-      # POSTGRES_HOST_AUTH_METHOD: "trust"
+     # POSTGRES_HOST_AUTH_METHOD: "trust"
      volumes:
       - ./data/postgres:/var/lib/postgresql/data  
      
@@ -20,7 +21,8 @@ services:
       - network1
      build: ./redmine
      container_name: redmine
-     restart: always
+     hostname: redmine
+     restart: unless-stopped
      depends_on:
         - postgres
      links:
@@ -35,25 +37,26 @@ services:
      #   - DB_PORT=tcp://db:5432
  
  
- #nginx:
+ nginx:
     
-   #  image: nginx
-    # container_name: nginx
-    # volumes:
-   #    - ./logs/nginx/:/var/log/nginx/
-  #     - ./nginx/config/nginx.conf:/etc/nginx/nginx.conf
-  #   hostname: nginx
-  #   ports:
-   #   - "3000:3000"
-   #   - "443:443"
-   #  links:
-   #   - redmine
-  #   depends_on:
-   #   - redmine
-  #   command: ["nginx", "-g", "daemon off;"]
-   #  restart: unless-stopped
-   #  networks:
-  #    - network1
+     image: nginx
+     container_name: nginx
+     hostname: nginx
+     volumes:
+       - ./logs/nginx/:/var/log/nginx/
+       - ./nginx/config/nginx.conf:/etc/nginx/nginx.conf
+  
+     ports:
+      - "3000:3000"
+      - "443:443"
+     links:
+      - redmine
+     depends_on:
+      - redmine
+     command: ["nginx", "-g", "daemon off;"]
+     restart: unless-stopped
+     networks:
+      - network1
 
 
 networks:
