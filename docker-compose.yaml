@@ -12,15 +12,11 @@ services:
        POSTGRES_PASSWORD: "postgres"
        POSTGRES_DB: "postgres"
        PGDATA: "/var/lib/postgresql/data"
-     # POSTGRES_HOST_AUTH_METHOD: "trust"
      volumes:
       - ./data/postgres:/var/lib/postgresql/data  
      
-     #networks:
-     # - network1
+
  redmine:
-     #networks:
-     # - network1
      build: ./redmine
      container_name: redmine
      hostname: redmine
@@ -35,9 +31,6 @@ services:
         - ./storage/docker_redmine-plugins:/usr/src/redmine/plugins
         - ./storage/docker_redmine-themes:/usr/src/redmine/public/themes
         - ./storage/docker_redmine-data:/usr/src/redmine/files
-     #environment:
-     #   - DB_PORT=tcp://db:5432
- 
  
  nginx:
     
@@ -56,11 +49,3 @@ services:
       - redmine
      command: ["nginx", "-g", "daemon off;"]
      restart: unless-stopped
-     #networks:
-     # - network1
-
-
-
-#networks:
-#   network1:
-#     driver: bridge

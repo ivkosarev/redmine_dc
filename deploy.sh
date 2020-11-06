@@ -9,7 +9,7 @@ docker push ivkosarev/redm1ne:latest
 
 if [ $? -eq 0 ]
 then
-  echo "Buil Successfully Pushed!"
+  echo "Build Successfully Pushed!"
 else
-  echo "something went wrong" >&2
+  echo "Something went wrong" >&2
 fi

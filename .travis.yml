@@ -3,19 +3,3 @@ language: bash
 
 script: bash deploy.sh
   
-#env:
-#  - DOCKER_COMPOSE_VERSION=1.4.2
-#before_install:
-#  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-# - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-#  - sudo apt-get update
-#  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
-#  - sudo rm /usr/local/bin/docker-compose
-#  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-##  - chmod +x docker-compose
- # - sudo mv docker-compose /usr/local/bin
-    
-notifications:
-  slack:
-    rooms:
-      secure: lsNxK8JNHZEBBLxIBKF8406RENNQfb+y113N7k7g19Q7/i+XclhvdCzRPw0g7EAeYsOje0bRvXiGhvuLSRF06afG3VbLd0DETdIxGn9015pPhzrhopCo+BjiFJfsjDNHVb0DeNxfdKfJGGJLI+iROJpxQzl1OQNUjFxpM0MZkEuviSDA6DLetC9luH6pvbNVNz7KnetLPm/ZTKBLb8wejBVSNfranIdIh/pw1U4uPa07GS1PeaOykoHfrNPKXVBWFljXh9LdoZL5aOCM6arUiNFX1eJ2p/ePYkmSrHgMGTsEsCYjtYgLHWXoyrcYvJfWIoz65eZl60LzX8yUtIDbo03bbQ6mLrfo+555Hg5dff95xzub6sMYpgbFFHQNfstbVCD4l96FW9t7R3iij21xxyYbWM6JSAUU0aFV/7jM6IJJ1jZP90eB7B2FjMmg9aQrID/VO2R/fDraAlBIpC9FowrzmsCpZ0vA330A9y7tB1tmaYS+5BcLXkBa8KUs6Vr7wkgXLMBksLEgf/5wVK2kz4+smFvxYe3o0+vivH3rvUWNlHKUOFKufciXMKtS64REFcVuzrom92QaOzT7etAOzIJNJljXmvO3mifwpHjsscVsAcd9TAurZ+2f/nDfqVCkuvTVwhndWkHJZ+xTIOiRtmO58Y7zMqnzoL7d9/HWD2M=
