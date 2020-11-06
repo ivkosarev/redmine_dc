@@ -17,8 +17,8 @@ services:
      #networks:
      # - network1
  redmine:
-     networks:
-      - network1
+     #networks:
+     # - network1
      build: ./redmine
      container_name: redmine
      hostname: redmine
