@@ -17,7 +17,7 @@ COPY ./database.yml /opt/redmine/config/
 
 
 COPY ./install_r.sh /usr/local/bin/
-RUN chmod a+x /usr/local/bin/install_r.sh 
+RUN chmod a+x /usr/local/bin/install_r.sh && bash /usr/local/bin/install_r.sh
 
 WORKDIR /opt/redmine
 EXPOSE 3000
