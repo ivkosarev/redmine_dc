@@ -11,13 +11,10 @@ libmagick++-dev passenger libcurl4-openssl-dev libssl-dev libpq-dev
 RUN cd /opt && git clone https://github.com/redmine/redmine.git
 COPY ./database.yml /opt/redmine/config/
 
-#COPY ./ruby.sh /usr/local/bin/
-#RUN chmod a+x /usr/local/bin/ruby.sh && bash /usr/local/bin/ruby.sh
+COPY ./ruby.sh /usr/local/bin/
+RUN chmod a+x /usr/local/bin/ruby.sh && bash /usr/local/bin/ruby.sh
 
 
-
-COPY ./install_r.sh /usr/local/bin/
-RUN chmod a+x /usr/local/bin/install_r.sh && bash /usr/local/bin/install_r.sh
 
 WORKDIR /opt/redmine
 EXPOSE 3000
