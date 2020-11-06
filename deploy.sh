@@ -10,7 +10,7 @@ docker tag redmine:${GIT_VERSION} redmine:latest
 
 # Вход в Docker Hub и выгрузка образа
 docker login --username ivkosarev -p 9f2d46ec-251b-46e9-89ef-619d99477ef4
-docker push redmine:${GIT_VERSION}
+docker push ivkosarev/redmine:latest
 
 # Найти ID работающего контейнера
 CONTAINER_ID=$(docker ps | grep takenote | cut -d" " -f1)
