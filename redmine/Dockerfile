@@ -22,6 +22,6 @@ COPY ./install_r.sh /usr/local/bin/
 RUN chmod a+x /usr/local/bin/install_r.sh 
 WORKDIR /opt/redmine-4.1
 ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
-CMD ["-c", "/usr/local/bin/install_r.sh"]
+CMD ["-c", "ruby bin/rails server -b 0.0.0.0 -e production"]
 
 EXPOSE 3000
