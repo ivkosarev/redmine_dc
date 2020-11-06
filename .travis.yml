@@ -1,5 +1,5 @@
 language: bash
   - docker
 
-script: bash export.sh && bash deploy.sh
+script: bash deploy.sh
   
