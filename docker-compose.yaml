@@ -27,8 +27,8 @@ services:
         - postgres
      links:
         - postgres
-     ports:
-        - 3000:3000
+     expose:
+      - "3000"
      volumes:
         - ./storage/docker_redmine-plugins:/usr/src/redmine/plugins
         - ./storage/docker_redmine-themes:/usr/src/redmine/public/themes
