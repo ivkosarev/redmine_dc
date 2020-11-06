@@ -17,7 +17,7 @@ WORKDIR /opt/redmine
 COPY ./ruby.sh /usr/local/bin/
 RUN chmod a+x /usr/local/bin/ruby.sh && bash /usr/local/bin/ruby.sh
 
-
+COPY ./init.sh /usr/local/bin/
 
 EXPOSE 3000
 
