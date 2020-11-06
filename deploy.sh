@@ -1,5 +1,7 @@
 #!/bin/sh
 set -e
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+docker push USER/REPO
 
 GIT_VERSION=$(git describe --always --abbrev --tags --long) # Git-хэш и теги
 
