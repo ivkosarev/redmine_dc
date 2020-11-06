@@ -1,8 +1,0 @@
-production:
- adapter: postgresql
- encoding: unicode
- database: postgres
- host: postgres
- port: 5432
- username: postgres
- password: superstrongpasswdqwerty123
