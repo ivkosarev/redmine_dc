@@ -5,7 +5,7 @@ set -e
 GIT_VERSION=$(git describe --always --abbrev --tags --long) # Git-хэш и теги
 
 # Сборка и тегирование образа
-docker build -t redmine:${GIT_VERSION} .
+docker build -t  redmine:${GIT_VERSION} ./redmine
 docker tag redmine:${GIT_VERSION} redmine:latest
 
 # Вход в Docker Hub и выгрузка образа
