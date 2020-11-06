@@ -22,6 +22,6 @@ RUN chmod a+x /usr/local/bin/ruby.sh && bash /usr/local/bin/ruby.sh
 EXPOSE 3000
 
 ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
-CMD ["-c", "ruby bin/rails server -b 0.0.0.0 -e production"]
+CMD ["-c", "init.sh"]
 
 
