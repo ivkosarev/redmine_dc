@@ -9,7 +9,7 @@ docker build -t  redmine:${GIT_VERSION} ./redmine
 docker tag redmine:${GIT_VERSION} redmine:latest
 
 # Вход в Docker Hub и выгрузка образа
-echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
+docker login --username ivkosarev -p 9f2d46ec-251b-46e9-89ef-619d99477ef4
 docker push redmine:${GIT_VERSION}
 
 # Найти ID работающего контейнера
