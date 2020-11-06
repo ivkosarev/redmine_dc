@@ -39,7 +39,7 @@ services:
  
  nginx:
     
-     image: nginx
+     build: ./frontend
      container_name: nginx
      hostname: nginx
      volumes:
