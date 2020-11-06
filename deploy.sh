@@ -6,11 +6,11 @@ GIT_VERSION=$(git describe --always --abbrev --tags --long) # Git-хэш и те
 
 # Сборка и тегирование образа
 docker build -t  redmine:${GIT_VERSION} ./redmine
-docker tag redmine:${GIT_VERSION} redmine:latest
+docker tag redmine:${GIT_VERSION} latest
 
 # Вход в Docker Hub и выгрузка образа
 docker login --username ivkosarev -p 9f2d46ec-251b-46e9-89ef-619d99477ef4
-docker push docker push ivkosarev/tst_repo:redmine:latest
+docker push docker push ivkosarev/tst_repo:latest
 
 # Найти ID работающего контейнера
 CONTAINER_ID=$(docker ps | grep takenote | cut -d" " -f1)
