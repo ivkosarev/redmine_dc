@@ -3,7 +3,7 @@ set -e
 docker build -t  redm1ne ./redmine
 docker tag redm1ne ivkosarev/redm1ne:latest
 
-docker login --username ${docker_login} --password ${docker_pass}
+cat my_passwd_docker.txt | docker login --username ivkosarev --password-stdin
 
 docker push ivkosarev/redm1ne:latest
 
