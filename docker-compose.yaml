@@ -15,7 +15,7 @@ services:
      volumes:
       - ./data/postgres:/var/lib/postgresql/data
      env_file:
-      - secret/variables.env
+      - variables.env
 
  redmine:
      build: ./redmine
