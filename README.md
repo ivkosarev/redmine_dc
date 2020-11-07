@@ -7,4 +7,4 @@ This repository was created by me to perform the task of deploying a container f
   + database.yml -config file for Redmine that specifies how to connect to the database
   + variables.env -env for postgres with user login, password and name of DB
   + my_passwd_docker.txt -password for dokerhub login
-3. docker-compose up
+3. bash deploy.sh
