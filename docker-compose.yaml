@@ -13,9 +13,9 @@ services:
        POSTGRES_DB: ${POSTGRES_DB}
        PGDATA: "/var/lib/postgresql/data"
      volumes:
-      - ./data/postgres:/var/lib/postgresql/data  
+      - ./data/postgres:/var/lib/postgresql/data
      env_file:
-      - ./secret/variables.env
+      - secret/variables.env
 
  redmine:
      build: ./redmine
@@ -32,15 +32,15 @@ services:
         - ./storage/docker_redmine-plugins:/usr/src/redmine/plugins
         - ./storage/docker_redmine-themes:/usr/src/redmine/public/themes
         - ./storage/docker_redmine-data:/usr/src/redmine/files
- 
+
  nginx:
-    
+
      build: ./frontend
      container_name: nginx
      hostname: nginx
      volumes:
        - ./logs/nginx/:/var/log/nginx/
-  
+
      ports:
       - "3000:3000"
      links:
