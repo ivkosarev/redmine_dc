@@ -1,4 +1,4 @@
-####This repository was created by me to perform the task of deploying a container from scratch with Redmine+Puma, and also take ready-made images of Postgresql and Nginx. I also connected Travis CI to build a Redmine image and publish it to DockerHub
+#### This repository was created by me to perform the task of deploying a container from scratch with Redmine+Puma, and also take ready-made images of Postgresql and Nginx. I also connected Travis CI to build a Redmine image and publish it to DockerHub
 
 # To reproduce the result you need to do a few simple steps:
 
