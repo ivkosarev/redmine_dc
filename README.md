@@ -7,4 +7,4 @@
   + database.yml -config file for Redmine that specifies how to connect to the database
   + variables.env -env for postgres with user login, password and name of DB
   + my_passwd_docker.txt -password for dokerhub login
-3. bash deploy.sh
+3. bash deploy.sh for buil and push image to dockerhub or docker-compose up for build and run containers on your host
