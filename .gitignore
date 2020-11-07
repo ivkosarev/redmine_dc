@@ -1,1 +1,3 @@
-#/secret/*
+redmine/database.yml
+my_passwd_docker.txt
+variables.env
