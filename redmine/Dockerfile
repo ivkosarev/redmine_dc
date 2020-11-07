@@ -9,7 +9,7 @@ imagemagick build-essential patch liblzma-dev \
 libmagick++-dev passenger libcurl4-openssl-dev libssl-dev libpq-dev
 
 RUN cd /opt && git clone https://github.com/redmine/redmine.git
-COPY database.yml /opt/redmine/config/
+COPY ./database.yml /opt/redmine/config/
 WORKDIR /opt/redmine
 COPY ./ruby.sh /usr/local/bin/
 RUN chmod a+x /usr/local/bin/ruby.sh && bash /usr/local/bin/ruby.sh
@@ -20,5 +20,3 @@ EXPOSE 3000
 
 ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
 CMD ["-c", "bash /usr/local/bin/init.sh"]
-
-
