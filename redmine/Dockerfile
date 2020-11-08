@@ -1,14 +1,28 @@
 FROM ubuntu
 
-RUN apt-get update
-
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get install -y tzdata gnupg python-dev git ruby-dev \
-imagemagick build-essential patch liblzma-dev \
-libmagick++-dev passenger libcurl4-openssl-dev libssl-dev libpq-dev
+RUN apt-get update && apt-get install -y build-essential \
+curl \
+gnupg \
+imagemagick \
+libcurl4-openssl-dev \
+liblzma-dev \
+libmagick++-dev \
+libpq-dev \
+libssl-dev \
+patch \
+postgresql \
+python-dev \
+python3-pip \
+subversion \
+sudo \
+tzdata \
+zlib1g-dev \
+&& rm -rf /var/lib/apt/lists/*
 
-RUN cd /opt && git clone https://github.com/redmine/redmine.git
+RUN cd /opt && svn co https://svn.redmine.org/redmine/branches/4.1-stable redmine-4.1 \
+&& ln -s redmine-* redmine
 COPY ./database.yml /opt/redmine/config/
 WORKDIR /opt/redmine
 COPY ./ruby.sh /usr/local/bin/
