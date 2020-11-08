@@ -15,6 +15,7 @@ patch \
 python-dev \
 ruby-dev \
 tzdata \
+&& rm -rf /var/lib/apt/lists/*
 
 RUN cd /opt && git clone https://github.com/redmine/redmine.git
 
