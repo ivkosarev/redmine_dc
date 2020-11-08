@@ -15,6 +15,7 @@ patch \
 postgresql \
 python-dev \
 python3-pip \
+ruby-dev \
 subversion \
 sudo \
 tzdata \
